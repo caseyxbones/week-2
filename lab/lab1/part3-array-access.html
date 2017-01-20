@@ -79,15 +79,10 @@
                           [39.954124, -75.211580, "Restaurant 2"],
                           [39.952236, -75.173971, "Restaurant 3"]
                          ]
-    for (var i = restaurantData) {
-         n = restaurantData.length;
-    
-   }
-
-
-    L.marker([0, 0]).addTo(map);
-    L.marker([0, 0]).addTo(map);
-    L.marker([0, 0]).addTo(map);
+    var n = restaurantData.length
+    for (var counter = 0; counter < n; counter ++ ) {
+      L.marker([restaurantData[counter][0], restaurantData[counter][1]]).addTo(map);
+    }
 
     /* =====================
 

@@ -69,22 +69,31 @@
       ext: 'png'
     }).addTo(map);
 
-    
-
     /* =====================
 
     Start code
 
     ===================== */
+
     var restaurantData = [
                           [39.949298, -75.169145, "Restaurant 1"],
                           [39.954124, -75.211580, "Restaurant 2"],
-                          [39.952236, -75.173971, "Restaurant 3"]
+                          [39.952236, -75.173971, "Restaurant 3"],
+                          [39.954525, -75.194771, "Restaurant 4"],
+                          [39.950320, -75.150808, "Restaurant 5"]
                          ]
     var n = restaurantData.length
+
     for (var counter = 0; counter < n; counter ++ ) {
-      L.marker([restaurantData[counter][0], restaurantData[counter][1]]).addTo(map);
+      var customPopup =  restaurantData[counter][2];
+      L.marker([restaurantData[counter][0], restaurantData[counter][1]]).bindPopup(customPopup).addTo(map);
+        // var popup = L.popup()
+        //   .setLatLng([restaurantData[counter][0], restaurantData[counter][1]])
+        //   .setContent([restaurantData[counter][2]])
+        //   .openOn(map);
     }
+
+
 
     /* =====================
 
